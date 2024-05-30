@@ -1,0 +1,33 @@
+.admin-container {
+  display: flex;
+  .admin-sidebar {
+    .pro-sidebar {
+      height: 100vh !important;
+    }
+  }
+  .admin-content {
+    width: 100%;
+    .admin-header {
+      height: 74px;
+      background-color: rgb(197, 197, 197);
+      border-bottom: 1px solid rgb(160, 160, 160);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px 0 10px;
+      .h-dashboard-left {
+        margin-left: 5px;
+        cursor: pointer;
+        font-size: 27px;
+      }
+      .h-dashboard-right {
+        display: flex;
+        align-items: center;
+        margin-right: 45px;
+      }
+    }
+    .admin-main {
+      height: calc(100vh - 104px);
+    }
+  }
+}

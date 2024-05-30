@@ -1,0 +1,80 @@
+.login-container {
+    .loader-icon {
+        margin-bottom: 3px;
+        top: 2px;
+        animation: spin 1s infinite linear;
+    }
+    
+    @keyframes spin {
+        from {
+            transform: scale(1) rotate(0deg);
+        }
+        to {
+            transform: scale(1) rotate(360deg);
+        }
+    }
+    .header {
+        height: 45px;
+        padding: 15px 100px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 20px;
+        margin-top: 10px;
+        button {
+            padding: 4px 12px;
+            margin-left: 15px;
+            border-radius: 3px;
+            background-color: white;
+            border: 1px solid;
+           
+        }
+        
+    }
+    .back{
+        cursor: pointer;
+    }
+    .title {
+        text-align: center;
+        font-size: 25px;
+        padding: 20px 0;
+    }
+    .welcome{
+        text-align: center;
+        padding: 10px 0;
+        font-size: 20px;
+    }
+    .content-form {
+        input{
+            margin-bottom: 15px;
+            margin-top: 3px;
+            opacity: 0.8;
+            border: 1px solid rgb(86, 86, 86);
+        }
+        button {
+            width: 100%;
+            height: 40px;
+            border: none;
+            border-radius: 7px;
+            margin: 4px 0;
+            color: white;
+            background-color: rgb(42, 42, 42);
+            &:disabled {
+                background-color: #dddddd ;
+                color: #afafaf ;
+                cursor: no-drop;
+            }
+        }
+        .pass-group {
+            position: relative;
+
+            .icons-eye {
+                cursor: pointer;
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+            }
+        }
+    }
+}
+
