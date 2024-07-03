@@ -13,6 +13,7 @@ const ListQuiz = (props) => {
 
   const getQuizData = async () => {
     const res = await getQuizByUser();
+    console.log(res)
     if (res && res.EC === 0) {
       setArrayQuiz(res.DT);
     }
@@ -45,7 +46,7 @@ const ListQuiz = (props) => {
 
         {arrayQuiz && arrayQuiz.length === 0 && 
         <div>
-          You don't have any quiz now?
+          Loading...
           </div>
         }
     </div>
