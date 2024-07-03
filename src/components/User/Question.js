@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import _ from "lodash";
-import Lightbox from "react-awesome-lightbox"
 
 const Question = (props) => {
   const { data, currentQuestion } = props;
@@ -16,14 +15,6 @@ const Question = (props) => {
       {data.image ? (
         <div className="question-image">
           <img style={{ cursor: "pointer"}} onClick={() => setIsPreviewImage(true)} src={`data:image/jpeg;base64, ${data.image}`} alt="" />
-          {isPreviewImage === true && 
-          <Lightbox 
-          image = {`data:image/jpeg;base64, ${data.image}`}
-          title = {"Question image"}
-          onClose= {() => setIsPreviewImage(false)}
-
-          ></Lightbox>
-          }
         </div>
       ) : (
         <div className="question-image"></div>

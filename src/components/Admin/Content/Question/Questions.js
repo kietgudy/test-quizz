@@ -9,8 +9,6 @@ import { RiImageAddFill } from "react-icons/ri";
 import { v4 as uuidv4 } from "uuid";
 import _ from "lodash";
 import { toast } from "react-toastify";
-import Lightbox from "react-awesome-lightbox";
-import "react-awesome-lightbox/build/style.css";
 import {
   getAllQuizForAdmin,
   postCreateNewAnswer,
@@ -34,7 +32,6 @@ const Questions = (props) => {
     },
   ]
   const [selectedQuiz, setSelectedQuiz] = useState({});
-  const [isPreviewImage, setIsPewviewImage] = useState(false);
   const [dataImagePreview, setDataImagePreview] = useState({
     title: "",
     url: "",
@@ -163,7 +160,6 @@ const Questions = (props) => {
         url: URL.createObjectURL(questionsClone[index].imageFile),
         title: questionsClone[index].imageName,
       });
-      setIsPewviewImage(true);
     }
   };
   const handleSubmitQuestion = async () => {
@@ -381,13 +377,6 @@ const Questions = (props) => {
               Save questions
             </button>
           </div>
-        )}
-        {isPreviewImage === true && (
-          <Lightbox
-            image={dataImagePreview.url}
-            title={dataImagePreview.title}
-            onClose={() => setIsPewviewImage(false)}
-          ></Lightbox>
         )}
       </div>
     </div>

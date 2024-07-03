@@ -9,13 +9,9 @@ import { RiImageAddFill } from "react-icons/ri";
 import { v4 as uuidv4 } from "uuid";
 import _ from "lodash";
 import { toast } from "react-toastify";
-import Lightbox from "react-awesome-lightbox";
-import "react-awesome-lightbox/build/style.css";
 import {
   getQuizWithQA,
   getAllQuizForAdmin,
-  postCreateNewAnswer,
-  postCreateNewQuestion,
   postUpsertQA,
 } from "../../../../services/apiService";
 
@@ -416,13 +412,6 @@ const fetchQuizWithQA = async () => {
               Save questions
             </button>
           </div>
-        )}
-        {isPreviewImage === true && (
-          <Lightbox
-            image={dataImagePreview.url}
-            title={dataImagePreview.title}
-            onClose={() => setIsPewviewImage(false)}
-          ></Lightbox>
         )}
       </div>
     </div>
