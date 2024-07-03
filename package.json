@@ -8,6 +8,7 @@
     "@testing-library/user-event": "13.5.0",
     "axios": "1.6.7",
     "bootstrap": "5.3.2",
+    "dotenv": "^16.4.5",
     "i18next": "21.8.16",
     "i18next-browser-languagedetector": "6.1.4",
     "i18next-http-backend": "1.4.1",

@@ -1,14 +1,20 @@
 import axios from "axios";
 import NProgress from "nprogress";
-import {store} from "../redux/store"
+import { store } from "../redux/store";
 
-NProgress.configure({showSpinner: false,speed: 600,easing: 'ease', trickleSpeed: 100})
+NProgress.configure({
+  showSpinner: false,
+  speed: 600,
+  easing: "ease",
+  trickleSpeed: 100,
+});
+const baseURL = process.env.REACT_APP_BACKEND_URL;
 const instance = axios.create({
-  baseURL: "http://localhost:8080/",
+  baseURL: baseURL,
 });
 instance.interceptors.request.use(
   function (config) {
-    console.log(store.getState())
+    console.log(store.getState());
     const access_token = store?.getState()?.user?.account?.access_token;
     config.headers["Authorization"] = "Bearer " + access_token;
 
@@ -27,8 +33,8 @@ instance.interceptors.response.use(
   },
   function (error) {
     NProgress.done();
-    if(error.response.data && error.response.data.EC === -999) {
-      window.location.href = "/login"
+    if (error.response.data && error.response.data.EC === -999) {
+      window.location.href = "/login";
     }
     return error && error.response && error.response.data
       ? error.response.data

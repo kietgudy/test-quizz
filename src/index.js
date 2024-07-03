@@ -14,13 +14,13 @@ import i18n from "./utils/i18n";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-    {/* <React.StrictMode> */}
+    <React.StrictMode>
     <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter>
         <Layout />
       </BrowserRouter>
     </PersistGate>
-    {/* </React.StrictMode> */}
+    </React.StrictMode>
   </Provider>
 );
 
